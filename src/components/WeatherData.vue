@@ -37,26 +37,26 @@ conditionIcon.value = data.value.current.condition.icon
 <!--middle -->
     <div class="flex flex-wrap justify-center gap-4">
 <!--  Left -->
-      <div class="p-6 w-80 rounded-lg bg-primary space-y-6 px-8">
-        <h4 class="font-semibold text-white text-center ">Dhaka, Bangladesh</h4>
+      <div class="p-6 w-80 rounded-lg bg-white space-y-6 px-8 shadow-lg">
+        <h4 class="font-semibold text-center ">Dhaka, Bangladesh</h4>
 
         <div class="flex justify-center gap-3 items-center">
-          <h2 class="text-7xl font-bold text-white">{{tempC}}°</h2>
+          <h2 class="text-7xl font-bold text-primary">{{tempC}}°</h2>
           <div class="space-y-2">
-            <h4 class="font-semibold text-white bg-white/20 px-2 rounded cursor-pointer">C</h4>
-            <h4 class="font-semibold px-2 cursor-pointer text-gray-800/50  rounded">F</h4>
+            <h4 class="font-semibold text-primary bg-primary/20 px-2 rounded cursor-pointer">C</h4>
+            <h4 class="font-semibold px-2 cursor-pointer text-primary/30  rounded">F</h4>
           </div>
         </div>
 
-        <div class="flex justify-center content-stretch items-center rounded gap-2 bg-white p-2">
+        <div class="flex justify-center content-stretch items-center rounded gap-2 bg-primary/10 p-2">
           <Icon icon="noto:sun-behind-small-cloud" class="text-4xl" />
           <span class="text-xl">{{condition}}</span>
         </div>
 
       </div>
 <!--  Right -->
-      <div class="p-6 bg-secondary rounded-lg w-80 flex flex-col justify-center items-center">
-        <h2 class="text-7xl font-bold">09:23</h2>
+      <div class="p-6 bg-white  shadow-lg rounded-lg w-80 flex flex-col justify-center items-center">
+        <h2 class="text-7xl font-bold text-primary">09:23</h2>
         <span class="text-2xl font-semibold">03-11-2024</span>
       </div>
 
@@ -64,7 +64,7 @@ conditionIcon.value = data.value.current.condition.icon
 
 <!--bottom -->
     <div class="flex flex-wrap justify-center gap-4">
-      <div class="w-24 text-center shadow-xl border border-black/10 rounded-lg">
+      <div class="w-24 text-center shadow-lg border border-black/10 rounded-lg">
         <div class="bg-primary p-1 text-center rounded-t-lg text-white">
           <span>SAT. 20</span>
         </div>
@@ -78,7 +78,7 @@ conditionIcon.value = data.value.current.condition.icon
 
       </div>
 
-      <div class="w-24 text-center shadow-xl border border-black/10 rounded-lg">
+      <div class="w-24 text-center shadow-lg border border-black/10 rounded-lg">
         <div class="bg-primary p-1 text-center rounded-t-lg text-white">
           <span>SAT. 20</span>
         </div>
@@ -92,7 +92,7 @@ conditionIcon.value = data.value.current.condition.icon
 
       </div>
 
-      <div class="w-24 text-center shadow-xl border border-black/10 rounded-lg">
+      <div class="w-24 text-center shadow-lg border border-black/10 rounded-lg">
         <div class="bg-primary p-1 text-center rounded-t-lg text-white">
           <span>SAT. 20</span>
         </div>
@@ -106,7 +106,7 @@ conditionIcon.value = data.value.current.condition.icon
 
       </div>
 
-      <div class="w-24 text-center shadow-xl border border-black/10 rounded-lg">
+      <div class="w-24 text-center shadow-lg border border-black/10 rounded-lg">
         <div class="bg-primary p-1 text-center rounded-t-lg text-white">
           <span>SAT. 20</span>
         </div>
@@ -120,7 +120,7 @@ conditionIcon.value = data.value.current.condition.icon
 
       </div>
 
-      <div class="w-24 text-center shadow-xl border border-black/10 rounded-lg">
+      <div class="w-24 text-center shadow-lg border border-black/10 rounded-lg">
         <div class="bg-primary p-1 text-center rounded-t-lg text-white">
           <span>SAT. 20</span>
         </div>
@@ -134,7 +134,7 @@ conditionIcon.value = data.value.current.condition.icon
 
       </div>
 
-      <div class="w-24 text-center shadow-xl border border-black/10 rounded-lg">
+      <div class="w-24 text-center shadow-lg border border-black/10 rounded-lg">
         <div class="bg-primary p-1 text-center rounded-t-lg text-white">
           <span>SAT. 20</span>
         </div>
