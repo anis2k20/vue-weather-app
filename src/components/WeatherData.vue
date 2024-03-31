@@ -44,7 +44,7 @@ conditionIcon.value = data.value.current.condition.icon
           <h2 class="text-7xl font-bold text-primary">{{tempC}}°</h2>
           <div class="space-y-2">
             <h4 class="font-semibold text-primary bg-primary/20 px-2 rounded cursor-pointer">C</h4>
-            <h4 class="font-semibold px-2 cursor-pointer text-primary/30  rounded">F</h4>
+            <h4 class="font-semibold px-2 cursor-pointer bg-gray-100 text-gray-400  rounded hover:bg-primary/20 hover:text-primary">F</h4>
           </div>
         </div>
 
