@@ -1,7 +1,7 @@
 <script setup>
 import axios from 'axios'
 import { Icon } from '@iconify/vue';
-import {ref} from 'vue'
+import {ref,computed} from 'vue'
 const data = ref(null)
 const tempC = ref(null)
 const tempF = ref(null)
@@ -9,6 +9,10 @@ const localTime = ref(null)
 const isDay = ref(null)
 const condition = ref(null)
 const conditionIcon = ref(null)
+const country = ref(null)
+const city = ref(null)
+
+const date = ref(new Date())
 
   try{
       const res = await axios.get('https://api.weatherapi.com/v1/current.json?key=9fcd76cb0e8d442e859110234243103&q=Dhaka')
@@ -18,13 +22,39 @@ const conditionIcon = ref(null)
       console.error(e)
     }
 
-tempC.value = data.value.current.temp_c
-tempF.value = data.value.current.temp_f
-localTime.value = data.value.location.localtime
-isDay.value = data.value.current.is_day
-condition.value = data.value.current.condition.text
-conditionIcon.value = data.value.current.condition.icon
+  tempC.value = data.value.current.temp_c
+  tempF.value = data.value.current.temp_f
+  localTime.value = data.value.location.localtime
+  isDay.value = data.value.current.is_day
+  condition.value = data.value.current.condition.text
+  conditionIcon.value = data.value.current.condition.icon
+  country.value = data.value.location.country
+  city.value = data.value.location.name
 
+   const location = computed(() => {
+     return `${city.value}, ${country.value}`
+   })
+
+  const time = computed(() => {
+    return localTime.value.split(" ")[1]
+  })
+
+  const today_date = computed(() => {
+    const day = date.value.getDate();
+    const month = date.value.getMonth() + 1;
+    const year = date.value.getFullYear();
+
+    if(month < 10 || day<10){
+      return `0${day}-0${month}-${year}`;
+    }
+
+
+    return `${day}/${month}/${year}`;
+  })
+
+  console.log(time)
+
+  console.log(data)
 </script>
 
 <template>
@@ -38,7 +68,7 @@ conditionIcon.value = data.value.current.condition.icon
     <div class="flex flex-wrap justify-center gap-4">
 <!--  Left -->
       <div class="p-6 w-80 rounded-lg bg-white space-y-6 px-8 shadow-lg">
-        <h4 class="font-semibold text-center ">Dhaka, Bangladesh</h4>
+        <h4 class="font-semibold text-center "> {{ location }} </h4>
 
         <div class="flex justify-center gap-3 items-center">
           <h2 class="text-7xl font-bold text-primary">{{tempC}}°</h2>
@@ -56,8 +86,8 @@ conditionIcon.value = data.value.current.condition.icon
       </div>
 <!--  Right -->
       <div class="p-6 bg-white  shadow-lg rounded-lg w-80 flex flex-col justify-center items-center">
-        <h2 class="text-7xl font-bold text-primary">09:23</h2>
-        <span class="text-2xl font-semibold">03-11-2024</span>
+        <h2 class="text-7xl font-bold text-primary">{{ time }}</h2>
+        <span class="text-2xl font-semibold">{{ today_date }}</span>
       </div>
 
     </div>
